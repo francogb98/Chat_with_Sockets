@@ -8,11 +8,10 @@ import { scrollToBottom } from "react-scroll/modules/mixins/animate-scroll";
 import { scrollToBottomAnimated } from "../helpers/scrollToBottom";
 
 export const SocketContext = createContext();
-
+const baseUrl = import.meta.env.VITE_API_URL;
 export const SocketProvider = ({ children }) => {
-  const { socket, online, conectarSocket, desconectarSocket } = useSocket(
-    "http://localhost:8080"
-  );
+  const { socket, online, conectarSocket, desconectarSocket } =
+    useSocket(baseUrl);
   const { auth } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
 
