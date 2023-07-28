@@ -3,7 +3,7 @@ import React from "react";
 const baseUrl = import.meta.env.VITE_API_URL;
 
 export const fetchSinToken = async (endpoint, data, method = "GET") => {
-  const url = `${baseUrl}/${endpoint}`;
+  const url = `/api/${baseUrl}/${endpoint}`;
 
   if (method === "GET") {
     const resp = await fetch(url);
@@ -20,7 +20,7 @@ export const fetchSinToken = async (endpoint, data, method = "GET") => {
   }
 };
 export const fetchConToken = async (endpoint, data, method = "GET") => {
-  const url = `${baseUrl}/${endpoint}`;
+  const url = `/api/${baseUrl}/${endpoint}`;
   const token = localStorage.getItem("token") || "";
 
   if (method === "GET") {
